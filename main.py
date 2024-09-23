@@ -101,3 +101,48 @@ accuracy ,pred =knn.eval(X_test,Y_test)
 print(f'model accuracy is : {accuracy}')
 
 
+# visualization over whole dataset:
+
+# Create color maps for 3-class classification problem (iris)
+cmap_light = ListedColormap(['#FFAAAA', '#AAFFAA', '#AAAAFF'])
+cmap_bold = ListedColormap(['#FF0000', '#00FF00', '#0000FF'])
+
+#geting data
+X= iris.data[:,:2]# only first 2 features
+Y = iris.target
+
+#model
+knn = KNClassifier(k=8)
+knn.fit(X,Y)
+# get min and max of data
+x_min, x_max = X[:, 0].min() - .1, X[:, 0].max() + .1
+y_min, y_max = X[:, 1].min() - .1, X[:, 1].max() + .1
+
+xx, yy = np.meshgrid(np.linspace(x_min, x_max, 100),
+                      np.linspace(y_min, y_max, 100))
+
+Z = np.array(knn.predict(np.c_[xx.ravel(), yy.ravel()]))
+
+# Put the result into a color plot- the colored area in backround - this is the "model prediction", right subplot
+plt.figure(figsize=(10,4))
+plt.subplot(1, 2, 1)
+pl.pcolormesh(xx, yy, Z.reshape(xx.shape), cmap=cmap_light)
+
+# plot the dataset itself - the bold points
+pl.scatter(X[:, 0], X[:, 1], c=Y, cmap=cmap_bold)
+pl.xlabel('sepal length (cm)')
+pl.ylabel('sepal width (cm)')
+pl.axis('tight')
+pl.title('train')
+
+# Put the result into a color plot - new subplot to show training points, left subplot
+plt.subplot(1, 2, 2)
+pl.pcolormesh(xx, yy, Z.reshape(xx.shape), cmap=cmap_light)
+
+# Plot training points- the bold points
+pl.scatter(X_test[:, 0], X_test[:, 1], c=Y_test, cmap=cmap_bold)
+pl.xlabel('sepal length (cm)')
+pl.ylabel('sepal width (cm)')
+pl.axis('tight')
+pl.title('test')
+pl.show()

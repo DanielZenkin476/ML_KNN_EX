@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ff35437-f7d9-40f0-a927-a5175540c7f7" name="Changes" comment="added imports, loaded data from iris dataset">
+    <list default="true" id="5ff35437-f7d9-40f0-a927-a5175540c7f7" name="Changes" comment="added knn classifier, iterated over k from 1 to 30, chose k=8, model accuracy over test data is 1.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -80,11 +80,20 @@
       <option name="project" value="LOCAL" />
       <updated>1727089971316</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added knn classifier, iterated over k from 1 to 30, chose k=8, model accuracy over test data is 1.0">
+      <option name="closed" value="true" />
+      <created>1727091656277</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1727091656277</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added imports, loaded data from iris dataset" />
-    <option name="LAST_COMMIT_MESSAGE" value="added imports, loaded data from iris dataset" />
+    <MESSAGE value="added knn classifier, iterated over k from 1 to 30, chose k=8, model accuracy over test data is 1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="added knn classifier, iterated over k from 1 to 30, chose k=8, model accuracy over test data is 1.0" />
   </component>
 </project>
